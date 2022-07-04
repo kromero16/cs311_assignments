@@ -9,3 +9,5 @@ $ test1
 $ test2
 $ test3
 ```
+
+Your code should work correctly for tests and be robust for potential error conditions, and free of dangerous code constructs and memory leaks. We will use tools like [cppcheck](https://cppcheck.sourceforge.io/) and [valgrind](https://valgrind.org/) to to analyze your code and catch memory leaks. 
