@@ -6,7 +6,8 @@ A "Hello World" program is a simple program to test the basic functionality of y
 ```
 hello Alex
 ```
-would print the message `Hello, Alex! Welcome to CS 311`.
+would print the message `Hello, Alex! Welcome to CS 311`. Note your program must be robust, and shouldn't crash if there isn't a command line argument. Instead, 
+it should print a message to the user and exit.  
 
 You can compile your code using the included `Makefile` and the `make` command
 ```
@@ -17,4 +18,7 @@ We will use the same Makefile for grading. Here is an example of how it should l
 $ make
 $ ./hello Mary
 Hello, Mary! Welcome to CS 311
+$ ./hello
+This program needs a command line argument!
+Usage: ./hello <Name>
 ```
