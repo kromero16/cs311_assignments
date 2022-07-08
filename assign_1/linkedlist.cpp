@@ -1,89 +1,156 @@
 //CS311 Yoshii S22 Linked List class
 
 //INSTRUCTION:
-//Must use the provided HW3P1_help.doc to create LinkedList.cpp
 //It helps to first create if-then-else structure to fill in later.
 //- Make sure PURPOSE and PARAMETER comments are given in detail
-//  You can copy from a Word document to emacs (contrl-right click)
 //  Highly recommended to copy HW3P1-help as PURPOSE of each function.
-//
-//- Make sure all if-then-else are commented describing which case it is
-//- Make sure all local variables are described fully with their purposes
-//  NEVER delete my comments!!!!
-//EMACS HINT:
-//  cntr-K cuts and cntr-Y pastes. 
-//  Esc x replace-str does string replacements
-//  Esc > goes to the end of the file; Esc < to the beginning
-//  Tab on each line will indent perfectly for C++
+//  Add sufficient comments to your code body to describe what it does.
+//      - Make sure all if-then-else are commented describing which case it is
+//      - Make sure all local variables are described fully with their purposes
+
+//You must complete the TODO parts and then complete LinkedList.cpp. Delete "TODO" after you are done.
 
 // ====================================================
-//HW#: HW3P1 LinkedList
-//Your name: **
+//Your name: ??? (TODO: Add your name)
 //Complier:  g++
-//File type: LinkedList.cpp implementation file
+//File type: linkedList.cpp implementation file
 //=====================================================
 
-
-#include"linkedlist.h" 
+#include<iostream>
+#include"linkedlist.h"
 
 using namespace std;
-#include<iostream>
 
-LinkedList::LinkedList()
-{ cout << "... in LinkedList constructor..." << endl; }
-
-LinkedList::~LinkedList()
-{ cout << ".... in LinkedList destructor..." << endl; }
-
-//PURPOSE:
-//PARAMETER:
-bool LinkedList::isEmpty() { } // be sure to check all 3 data members
-
-//PURPOSE:
-//PARAMETER:
-void LinkedList::displayAll() { }  // be sure to display horizontally in [  ] with
-// blanks between elements e.g. [ 1 2 3 4]
-// You MUST use while (P != NULL) loop or you will not get the credit!
-  
-//PURPOSE:
-//PARAMETER:
-void LinkedList::addRear(T NewNum) { } // comment the 2 cases
-
-//PURPOSE:
-//PARAMETER:
-void LinkedList::addFront(T NewNum) { } // comment the 2 cases
-
-//PURPOSE:
-//PARAMETER:
-void LinkedList::deleteFront(T& OldNum) { } // comment the 3 cases
-
-//PURPOSE:
-//PARAMETER:
-void LinkedList::deleteRear(T& OldNum){} // comment the 3 cases
-
-
-
-/* --- harder ones for case 2 and 3 follow -- */
-
-// Utility Function to move a local pointer to the Jth node
-void LinkedList::moveTo(int J, Node*& temp)
-{ // moves temp J-1 times to go to the Jth node  
-  // for ( int K = ... ) temp = temp->Next;
+/**
+ * @brief Construct an empty list
+ */
+LinkedList::LinkedList() {
+    //TODO: Add code here
 }
 
-//PURPOSE:
-//PARAMETER:
-void LinkedList::deleteIth(int I, T& OldNum) { } // must use moveTo to move local pointers. Be sure to comment to which node you are moving them. Do not forget to set OldNum.  
+/**
+ * @brief Destructor to destroy all nodes and release memory
+ */
+LinkedList::~LinkedList() {
+    //TODO: Add code here. Make sure memory is released properly.
+}
 
-//PURPOSE:
-//PARAMETER:
-void LinkedList::insertIth(int I, T newNum) { } // must use moveTo to move local pointers. Be sure to comment to which node you are moving them.
+/**
+ * @brief Purpose: Checks if the list is empty
+ * @return true if the list is empty, false otherwise
+ */
+bool LinkedList::isEmpty() {
+    // TODO: Add code here
+} 
 
-//PURPOSE:
-//PARAMETER:
-LinkedList::LinkedList(const LinkedList& Original) { } // use my code
+/**
+ * @brief  Get the number of nodes in the list
+ * @return int The number of nodes in the list
+ */
+int LinkedList::length() {
+    //TODO: Add code here
+}
 
-//PURPOSE:
-//PARAMETER:
-LinkedList& LinkedList::operator=(const LinkedList& OtherOne) { } // use my code
+/**
+ * @brief Displays the contents of the list
+ */
+void LinkedList::displayAll() {
+    Node *ptr = front;
+    cout << "[";
+    while(ptr != nullptr) {
+        cout << " " << ptr->val;
+        ptr = ptr->next;
+    }
+    cout << "]";
+}
+
+//TODO: Add comments
+void LinkedList::addRear(T val) {
+    // TODO: Add code here
+    // consider the two cases of whether the list was empty
+}
+
+//TODO: Add comments
+void LinkedList::addFront(T val) {
+    // TODO: Add code here
+    // consider the two cases of whether the list was empty
+} 
+
+//TODO: Add comments
+bool LinkedList::deleteFront(T &OldNum) {
+    // TODO: Add code here
+    // consider if the list was empty and return false if the list is empty
+    // consider the special case of deleting the only node in the list
+} 
+
+//TODO: Add comments
+bool LinkedList::deleteRear(T &OldNum) {
+    // TODO: Add code here
+    // consider if the list was empty and return false if the list is empty
+    // consider the special case of deleting the only node in the list
+} 
+
+/* --- harder ones for test 2 and 3 -- */
+
+/**
+     * @brief Delete a node at a given position from the list. The
+     * node at position pos is deleted and the value of the deleted node is returned in val.
+     * The valid range of pos is 1 to count. pos = 1 is the first node, and pos = count is the last node.
+     * @param pos: position of the node to be deleted
+     * @param val: it is set to the value of the node to be deleted
+     * @return true: if the node was deleted successfully
+     * @return false: if the node was not deleted successfully because the position was out of range
+    */
+bool LinkedList::deleteAt(int pos, T &val) {
+    //TODO: Add code here
+    // check if the pos is valid first, then move the ptr to the rigth positon
+    // consider the special case of deleting the first node and the last node
+    // Do not forget to set value.
+}
+
+/**
+     * @brief Insert a value at a specified position in the list. The valid pos is in the range of 1 to count+1.
+     * The value will be inserted before the node at the specified position. if pos = 1, the value will be inserted
+     * at the front of the list. if pos = count+1, the value will be inserted at the rear of the list.
+     * @param pos: position to insert the value at.
+     * @param val: value to insert.
+     * @return true: if the value was inserted.
+     * @return false: if the value was not inserted because pos is out of the range.
+     */
+bool LinkedList::insertAt(int pos, T val) {
+    //TODO: Add code here
+    // check if the pos is valid first, then move the ptr to the rigth positon
+    // consider the special case of inserting the first node and the last node
+}
+
+/**
+ * @brief Copy Constructor to allow pass by value and return by value of a LinkedList
+ * @param other LinkedList to be copied
+ */
+LinkedList::LinkedList(const LinkedList &other) {
+    // Start with an empty list
+    front = nullptr;
+    rear = nullptr;
+    count = 0;
+    // TODO: Add code here. Interate through the other list and add a new node to this list
+    // for each node in the other list. The new node should have the same value as the other node.
+
+}
+
+/**
+ * @brief Overloading of = (returns a reference to a LinkedList)
+ * @param other LinkedList to be copied
+ * @return reference to a LinkedList
+ */
+LinkedList &LinkedList::operator=(const LinkedList &other) {
+    if(this != &other) { // check if the same object
+        // Delete all nodes in this list
+        // TODO: Add code here
+        // Interate through the other list and add a new node to this list
+        // Be sure to set the front and rear pointers to the correct values
+        // Be sure to set the count to the correct value
+        // TODO: Add code here
+    }
+    return *this;
+}
 

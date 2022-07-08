@@ -12,3 +12,6 @@ test1: test1.o linkedlist.o
 	
 test2: test2.o linkedlist.o
 	$(CC) test2.o linkedlist.o -o test2
+
+test3: test3.o linkedlist.o
+	$(CC) test3.o linkedlist.o -o test3

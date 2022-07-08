@@ -1,11 +1,11 @@
-//CS311 Yoshii S22 LinkedList.h
+//CS311 LinkedList.h
 //INSTRUCTION:
-//Llist class - header file template 
-//You must complete the ** parts and then complete LinkedList.cpp
-//Don't forget PURPOSE and PARAMETERS 
+//Linkedlist class - header file template 
+//You must complete the TODO parts and then complete LinkedList.cpp. Delete "TODO" after you are done.
+//You should always comments to each function to describe its PURPOSE and PARAMETERS 
 
 // =======================================================
-// Your name: **
+// Your name: ??? (TODO: Add your name)
 // Compiler:  g++ 
 // File type: headher file  linkedlist.h
 //=======================================================
@@ -14,62 +14,93 @@
 typedef int T;  // int for now but can change later
 
 //a list node is defined here as a struct Node for now
-struct Node
-{
-  T Elem;   // elem is the element stored
-  Node *Next;  // next is the pointer to the next node
+struct Node {
+    T val;   // stored value
+    Node *next;  // pointer to the next node
+
+    // Constructor
+    Node(T val = 0, Node *next = nullptr) {
+        this->val = val;
+        this->next = next;
+    }
 };
 //---------------------------------------------------------
 
-class LinkedList
-{
-  
- private:
-  Node *Front;       // pointer to the front node
-  Node *Rear;        // pointer to the rear node
-  int  Count;        // counter for the number of nodes
+class LinkedList {
 
-  // untility function to move to a specified node position
-  void moveTo(int, Node*&);
-  
- public:
+private:
+    Node *front;       // pointer to the front node
+    Node *rear;        // pointer to the rear node
+    int count;        // the number of nodes in the list
 
-  // Exception handling classes 
-  class Underflow{};
-  class OutOfRange{};  // thrown when the specified Node is out of range
+public:
 
- //Copy Constructor to allow pass by value and return by value of a LinkedList
-  LinkedList(const LinkedList&);
-  
-  //Overloading of = (returns a reference to a LinkedList)
-  LinkedList& operator=(const LinkedList&); 
+    LinkedList();     // constructor to create an empty list
+    ~LinkedList();     // destructor to destroy all nodes and release memory
 
-  LinkedList ();     // constructor to create an empty list 
-  ~LinkedList();     // destructor to destroy all nodes and release memory
-  
-  //**
-  bool isEmpty();
-    
-  //**
-  void displayAll();
+    /**
+     * @brief Copy Constructor to allow pass by value and return by value of a LinkedList
+     * @param other LinkedList to be copied
+     */
+    LinkedList(const LinkedList &other);
 
-  //**
-  void addFront(T);
-    
-  //**
-  void addRear(T);
+    /**
+     * @brief Overloading of = (returns a reference to a LinkedList)
+     * @param other LinkedList to be copied
+     * @return reference to a LinkedList
+     */
+    LinkedList &operator=(const LinkedList &other);
 
-  //**
-  void deleteFront(T&);
-  
-  //---------------------------------------
-    
-  //**
-  void deleteRear(T&);
-    
-  //**
-  void deleteIth(int, T&);  // calls moveTo
 
-  //**    
-  void insertIth(int, T);   // calls moveTo
+    /**
+     * @brief Purpose: Checks if the list is empty
+     * @return true if the list is empty, false otherwise
+     */
+    bool isEmpty();
+
+    /**
+     * @brief  Get the number of nodes in the list
+     * @return int The number of nodes in the list
+     */
+    int length();
+
+    /**
+     * @brief  Displays the contents of the list
+     *
+     */
+    void displayAll();
+
+    //TODO: Add comments
+    void addFront(T val);
+
+    //TODO: Add comments
+    void addRear(T val);
+
+    //TODO: Add comments
+    bool deleteFront(T &val);
+
+    //TODO: Add comments
+    bool deleteRear(T &val);
+
+    /**
+     * @brief Delete a node at a given position from the list. The
+     * node at position pos is deleted and the value of the deleted node is returned in val.
+     * The valid range of pos is 1 to count. pos = 1 is the first node, and pos = count is the last node.
+     * @param pos: position of the node to be deleted
+     * @param val: it is set to the value of the node to be deleted
+     * @return true: if the node was deleted successfully
+     * @return false: if the node was not deleted successfully because the position was out of range
+    */
+    bool deleteAt(int pos, T &val);
+
+    /**
+     * @brief Insert a value at a specified position in the list. The valid pos is in the range of 1 to count+1.
+     * The value will be inserted before the node at the specified position. if pos = 1, the value will be inserted
+     * at the front of the list. if pos = count+1, the value will be inserted at the rear of the list.
+     * @param pos: position to insert the value at.
+     * @param val: value to insert.
+     * @return true: if the value was inserted.
+     * @return false: if the value was not inserted because pos is out of the range.
+     */
+    bool insertAt(int pos, T val);
 };
