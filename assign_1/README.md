@@ -1,6 +1,9 @@
-#Assignment 1
+#CS311 Programming Assignment 1
 
-In this assignment, you will complete the implementation of a class of single linked list. There are three test files to test the correctness of your 
+In this assignment, you will complete the implementation of a class of single linked list. The LinkedList class is defined in the "linkedlist.h" header file.
+Don't change the definitions of its member functions, except for adding comments. The LinkedList interface is used in the tests.
+
+There are three test programs to test the correctness of your 
 implementation. To build the executables `test1`, `test 2` and `test 3`, type `make` at the command line.  Then run each of the tests and confirm the 
 outputs match what are in the "expected test output" file. 
 ```
