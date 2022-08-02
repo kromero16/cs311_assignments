@@ -11,7 +11,7 @@
  * @brief Insertion sort algorithm
  * @param array Array to be sorted. The array is modified in place.
  * @param lowindex Lowest index of the array
- * @param highindex Highest index of the arra
+ * @param highindex Highest index of the array
  * @param reversed If reversed = true, the array should be sorted in descending order, otherwise in ascending order
  */
 void insertionSort(int array[], int lowindex, int highindex, bool reversed = false);
