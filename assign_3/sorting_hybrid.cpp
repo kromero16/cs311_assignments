@@ -11,6 +11,6 @@
  * It uses quicksort until the list gets small enough, and then uses insertion sort or another sort to sort the small lists
  *
  */
-void optimizedQuickSort(int array[], int lowindex, int highindex, bool reversed) {
+void hybridQuickSort(int array[], int lowindex, int highindex, bool reversed) {
     // TODO: Add your code here
 }

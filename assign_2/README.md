@@ -13,6 +13,7 @@ LA = (3, 5, 8, 11)
 LB = (2, 6, 8, 9, 22, 24)
 ```
 Then `unionLinkedList(LA, LB) = (3, 5, 8, 11, 2, 6, 9, 22, 24)`. Note the list isn’t sorted.
+To compute the union operation, you need to implement the LinkedList `search` function to check whether a value is in the list or not.  
 ## Merge Linked Lists
 Assume two input linked lists, LA and LB, whose elements are both in the non-descending order (duplicates may exist). Implement the following function to merge LA and LB into a new linked list (as the return value). The elements in the new list should still be in the non-descending order. The definition of the function `mergeLinkedList` is as the following:
 ```

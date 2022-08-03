@@ -17,6 +17,17 @@
 void insertionSort(int array[], int lowindex, int highindex, bool reversed = false);
 
 /**
+ * @brief The partition function used by quick sort 
+ * 
+ * @param array Array to be partitioned.
+ * @param lowindex lowest index of the array
+ * @param highindex highest index of the array
+ * @param reversed If reversed = true, the array should be sorted in descending order, otherwise in ascending order
+ * @return int The pivot index
+ */
+int partition(int array[], int lowindex, int highindex, bool reversed);
+
+/**
  * @brief Quick sort algorithm
  * 
  * @param array Array to be sorted. The array is modified in place.
@@ -53,6 +64,6 @@ LinkedList mergeSortLL(LinkedList& list, bool reversed = false);
  * @param highindex The highest index of the array
  * @param reversed if reversed = true, the array should be sorted in descending order, otherwise in ascending order
  */
-void optimizedQuickSort(int array[], int lowindex, int highindex, bool reversed = false);
+void hybridQuickSort(int array[], int lowindex, int highindex, bool reversed = false);
 
 #endif //ASSIGN_3_SORTING_H

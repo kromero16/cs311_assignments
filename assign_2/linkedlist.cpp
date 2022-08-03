@@ -22,13 +22,6 @@
 using namespace std;
 
 /**
- * @brief Construct an empty list
- */
-LinkedList::LinkedList() {
-    //TODO: Add code here
-}
-
-/**
  * @brief Destructor to destroy all nodes and release memory
  */
 LinkedList::~LinkedList() {
@@ -57,11 +50,16 @@ int LinkedList::length() {
 void LinkedList::displayAll() {
     Node *ptr = front;
     cout << "[";
-    while(ptr != nullptr) {
-        cout << " " << ptr->val;
+    if (ptr != nullptr) {
+          // Head node is not preceded by separator
+          cout << ptr->val;
+          ptr = ptr->next;
+      }
+    while (ptr != nullptr) {
+        cout << ", " << ptr->val;
         ptr = ptr->next;
     }
-    cout << "]";
+    cout << "]" << endl;
 }
 
 //TODO: Add comments
@@ -152,5 +150,14 @@ LinkedList &LinkedList::operator=(const LinkedList &other) {
         // TODO: Add code here
     }
     return *this;
+}
+
+/**
+ * Implement the search function.
+ * 
+ * @return true if the val is found in the list, false otherwise
+ */
+bool LinkedList::search(T val) const {
+    // TODO: Add code here
 }
 

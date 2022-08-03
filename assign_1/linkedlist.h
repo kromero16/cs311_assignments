@@ -28,14 +28,18 @@ struct Node {
 
 class LinkedList {
 
-private:
+public:
     Node *front;       // pointer to the front node
     Node *rear;        // pointer to the rear node
     int count;        // the number of nodes in the list
 
-public:
 
-    LinkedList();     // constructor to create an empty list
+    LinkedList() {     // constructor to create an empty list
+        front = nullptr;
+        rear = nullptr;
+        count = 0;
+    }
+    
     ~LinkedList();     // destructor to destroy all nodes and release memory
 
     /**

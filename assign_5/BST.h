@@ -80,7 +80,7 @@ public:
     bool find(const T & query) const;
 
     /**
-     * Return the left-most node in this BST
+     * Return pointer to the left-most node in this BST
      *
      * @return The left-most node in this BST
      */
@@ -94,7 +94,7 @@ public:
     Node* getLeftMostNode(Node* node);
 
     /**
-     * Remove all elements from the BST
+     * Remove all elements from the BST and deallocate all nodes
      */
     void clear();
 
@@ -112,12 +112,13 @@ public:
     int height() const;
 
     /**
-     * @brief Return the root node of the BST
+     * @brief Return pointer to the root node of the BST
+     * @return The root node of the BST. nullptr if the BST is empty
      */
      Node* getRoot();
 
     /**
-     * @brief Print the subtree at node using inorder traversal
+     * @brief Print the subtree at the given node using inorder traversal
      * @param node a pointer to node in BST
      */
      void printInorder(Node* node);

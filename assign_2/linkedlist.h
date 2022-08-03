@@ -35,7 +35,11 @@ private:
 
 public:
 
-    LinkedList();     // constructor to create an empty list
+    LinkedList() { // constructor to create an empty list
+        front = nullptr;
+        rear = nullptr;
+        count = 0;
+    } 
     ~LinkedList();     // destructor to destroy all nodes and release memory
 
     /**
@@ -103,6 +107,13 @@ public:
      * @return false: if the value was not inserted because pos is out of the range.
      */
     bool insertAt(int pos, T val);
+
+    /**
+     * @brief check whether a value is in the list or not
+     * @param val
+     * @return true if the val is found in the list, false otherwise
+     */
+    bool search(T val) const;
     
     /**
      * @brief Assume two linked lists that represent Set A and Set B respectively. 
