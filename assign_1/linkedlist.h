@@ -3,12 +3,15 @@
 //Linkedlist class - header file template 
 //You must complete the TODO parts and then complete LinkedList.cpp. Delete "TODO" after you are done.
 //You should always comments to each function to describe its PURPOSE and PARAMETERS 
+#pragma once
 
 // =======================================================
 // Your name: ??? (TODO: Add your name)
 // Compiler:  g++ 
 // File type: headher file  linkedlist.h
 //=======================================================
+#include <string>
+using namespace std;
 
 // Datatype T : element type definition
 typedef int T;  // int for now but can change later
@@ -39,7 +42,7 @@ public:
         rear = nullptr;
         count = 0;
     }
-    
+
     ~LinkedList();     // destructor to destroy all nodes and release memory
 
     /**
@@ -67,6 +70,11 @@ public:
      * @return int The number of nodes in the list
      */
     int length();
+
+    /**
+     * @brief Convert the contents of the list to a string
+     */
+    string toString();
 
     /**
      * @brief  Displays the contents of the list

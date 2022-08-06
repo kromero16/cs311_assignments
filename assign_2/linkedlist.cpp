@@ -45,21 +45,30 @@ int LinkedList::length() {
 }
 
 /**
+ * @brief Convert the list to a string
+ *
+ */
+string LinkedList::toString() {
+    string str = "[";
+    Node *ptr = front;
+    if (ptr != nullptr) {
+        // Head node is not preceded by separator
+        str += to_string(ptr->val);
+        ptr = ptr->next;
+    }
+    while (ptr != nullptr) {
+        str += ", " + to_string(ptr->val);
+        ptr = ptr->next;
+    }
+    str  += "]";
+    return str;
+}
+
+/**
  * @brief Displays the contents of the list
  */
 void LinkedList::displayAll() {
-    Node *ptr = front;
-    cout << "[";
-    if (ptr != nullptr) {
-          // Head node is not preceded by separator
-          cout << ptr->val;
-          ptr = ptr->next;
-      }
-    while (ptr != nullptr) {
-        cout << ", " << ptr->val;
-        ptr = ptr->next;
-    }
-    cout << "]" << endl;
+    cout << toString() << endl;
 }
 
 //TODO: Add comments

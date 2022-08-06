@@ -3,6 +3,10 @@
 //Linkedlist class - header file template 
 //You must complete the TODO parts and then complete LinkedList.cpp. Delete "TODO" after you are done.
 //You should always comments to each function to describe its PURPOSE and PARAMETERS 
+#pragma once
+
+#include <string>
+using namespace std;
 
 // =======================================================
 // Your name: ??? (TODO: Add your name)
@@ -28,18 +32,18 @@ struct Node {
 
 class LinkedList {
 
-private:
+public:
     Node *front;       // pointer to the front node
     Node *rear;        // pointer to the rear node
     int count;        // the number of nodes in the list
 
-public:
 
-    LinkedList() { // constructor to create an empty list
+    LinkedList() {     // constructor to create an empty list
         front = nullptr;
         rear = nullptr;
         count = 0;
-    } 
+    }
+    
     ~LinkedList();     // destructor to destroy all nodes and release memory
 
     /**
@@ -67,6 +71,11 @@ public:
      * @return int The number of nodes in the list
      */
     int length();
+    
+    /**
+     * @brief Convert the contents of the list to a string
+     */
+    string toString();
 
     /**
      * @brief  Displays the contents of the list
@@ -121,7 +130,7 @@ public:
      * 
      * @param LA Input linkedlist A as a set (no duplicated element)
      * @param LB Input linkedlist B as a set (no duplicated element)
-     * @return LinkedList return the unioned linkedlist 
+     * @return LinkedList* return the linkedlist of the union
      */
     friend LinkedList unionLinkedList(const LinkedList& LA, const LinkedList& LB);
 
