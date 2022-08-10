@@ -19,14 +19,21 @@ int main() {
     list.addRear(-3);
     list.addRear(-4);
     list.displayAll();
-    cout << "Insertion sort: " << endl;
-    LinkedList sortedList1 = insertionSortLL(list, false);
+    cout << "Insertion sort linked list: " << endl;
+    LinkedList sortedList1 = insertionSortLL(list);
     sortedList1.displayAll();
 
-    cout << "Merge sort: " << endl;
+    cout << "Insertion sort linked list in descending order: " << endl;
+    sortedList1 = insertionSortLL(list, true);
+    sortedList1.displayAll();
+
+    cout << "Merge sort linked list: " << endl;
     list.displayAll();
-    LinkedList sortedList2 = mergeSortLL(list, false);
+    LinkedList sortedList2 = mergeSortLL(list);
     sortedList2.displayAll();
 
+    cout << "merge sort linked list in descending order: " << endl;
+    sortedList2 = mergeSortLL(list, true);
+    sortedList2.displayAll();
     return 0;
 }

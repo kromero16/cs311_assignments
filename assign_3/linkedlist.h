@@ -9,6 +9,10 @@
 // Compiler:  g++ 
 // File type: headher file  linkedlist.h
 //=======================================================
+#pragma once
+
+#include <string>
+using namespace std;
 
 // Datatype T : element type definition
 typedef int T;  // int for now but can change later
@@ -27,12 +31,12 @@ struct Node {
 //---------------------------------------------------------
 
 class LinkedList {
-
-public:
+private:
     Node *front;       // pointer to the front node
     Node *rear;        // pointer to the rear node
     int count;        // the number of nodes in the list
 
+public:
     LinkedList();     // constructor to create an empty list
     ~LinkedList();     // destructor to destroy all nodes and release memory
 
@@ -61,6 +65,11 @@ public:
      * @return int The number of nodes in the list
      */
     int length();
+
+    /**
+     * @brief Convert the contents of the list to a string
+     */
+    string toString();
 
     /**
      * @brief  Displays the contents of the list
@@ -101,5 +110,47 @@ public:
      * @return false: if the value was not inserted because pos is out of the range.
      */
     bool insertAt(int pos, T val);
+
+     /**
+     * @brief check whether a value is in the list or not
+     * @param val
+     * @return true if the val is found in the list, false otherwise
+     */
+    bool hasValue(T val) const;
+    
+    /**
+     * @brief Assume two linked lists that represent Set A and Set B respectively. 
+     * Compute the union A U B and return the result as a new linked list. 
+     * 
+     * @param LA Input linkedlist A as a set (no duplicated element)
+     * @param LB Input linkedlist B as a set (no duplicated element)
+     * @return LinkedList return the unioned linkedlist 
+     */
+    friend LinkedList unionLinkedList(const LinkedList& LA, const LinkedList& LB);
+
+    /**
+     * @brief Assume two input linked lists, LA and LB, whose elements are both in the non-descending order.
+     * This function merges LA and LB into a new linked list (as the return value).
+     * The elements in the new list should still be in the non-descending order.
+     * 
+     * @param LA Input linkedlist in the non-descending order
+     * @param LB Input linkedlist in the non-descending order
+     * @return LinkedList return the merged linkedlist 
+     */
+    friend LinkedList mergeLinkedList(const LinkedList& LA, const LinkedList& LB);
+
+    /**
+    * @brief Insertion sort algorithm for linked lists
+    *
+    * declare it as friend function of the LinkedList class to access private variables
+    */
+    friend LinkedList insertionSortLL(LinkedList& list, bool reversed);
+
+    /**
+     * @brief Merge sort algorithm for linked lists
+     *
+     *  declare it as friend function of the LinkedList class to access private variables
+    */
+    friend LinkedList mergeSortLL(LinkedList& list, bool reversed);
 
 };

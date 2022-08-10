@@ -30,13 +30,12 @@ struct Node {
 //---------------------------------------------------------
 
 class LinkedList {
-
-public:
+private:
     Node *front;       // pointer to the front node
     Node *rear;        // pointer to the rear node
     int count;        // the number of nodes in the list
 
-
+public:
     LinkedList() {     // constructor to create an empty list
         front = nullptr;
         rear = nullptr;
@@ -97,7 +96,7 @@ public:
     /**
      * @brief Delete a node at a given position from the list. The
      * node at position pos is deleted and the value of the deleted node is returned in val.
-     * The valid range of pos is 1 to count. pos = 1 is the first node, and pos = count is the last node.
+     * The valid range of pos is 0 to count-1. pos = 0 for the first node, and pos = count-1 for the last node.
      * @param pos: position of the node to be deleted
      * @param val: it is set to the value of the node to be deleted
      * @return true: if the node was deleted successfully
@@ -106,9 +105,9 @@ public:
     bool deleteAt(int pos, T &val);
 
     /**
-     * @brief Insert a value at a specified position in the list. The valid pos is in the range of 1 to count+1.
-     * The value will be inserted before the node at the specified position. if pos = 1, the value will be inserted
-     * at the front of the list. if pos = count+1, the value will be inserted at the rear of the list.
+     * @brief Insert a value at a specified position in the list. The valid pos is in the range of 0 to count.
+     * The value will be inserted before the node at the specified position. if pos = 0, the value will be inserted
+     * at the front of the list. if pos = count, the value will be inserted at the rear of the list.
      * @param pos: position to insert the value at.
      * @param val: value to insert.
      * @return true: if the value was inserted.
