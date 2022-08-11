@@ -27,8 +27,9 @@ int main() {
     sortedList1 = insertionSortLL(list, true);
     sortedList1.displayAll();
 
-    cout << "Merge sort linked list: " << endl;
+    cout << "\noriginal: ";
     list.displayAll();
+    cout << "Merge sort linked list: " << endl;
     LinkedList sortedList2 = mergeSortLL(list);
     sortedList2.displayAll();
 

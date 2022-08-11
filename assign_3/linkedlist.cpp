@@ -39,7 +39,7 @@ LinkedList::~LinkedList() {
  * @brief Purpose: Checks if the list is empty
  * @return true if the list is empty, false otherwise
  */
-bool LinkedList::isEmpty() {
+bool LinkedList::isEmpty() const {
     // TODO: Add code here
 } 
 
@@ -47,7 +47,7 @@ bool LinkedList::isEmpty() {
  * @brief  Get the number of nodes in the list
  * @return int The number of nodes in the list
  */
-int LinkedList::length() {
+int LinkedList::length() const {
     //TODO: Add code here
 }
 

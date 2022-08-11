@@ -62,13 +62,13 @@ public:
      * @brief Purpose: Checks if the list is empty
      * @return true if the list is empty, false otherwise
      */
-    bool isEmpty();
+    bool isEmpty() const;
 
     /**
      * @brief  Get the number of nodes in the list
      * @return int The number of nodes in the list
      */
-    int length();
+    int length() const;
 
     /**
      * @brief Convert the contents of the list to a string
