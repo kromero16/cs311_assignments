@@ -1,4 +1,4 @@
-#CS311 Programming Assignment 1
+# CS311 Programming Assignment 1
 
 In this assignment, you will complete the implementation of a class of single linked list. The LinkedList class is defined in the "linkedlist.h" header file.
 Don't change the definitions of its member functions, except for adding comments. The LinkedList interface is used in the tests.
