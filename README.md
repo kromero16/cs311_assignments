@@ -12,6 +12,14 @@ The repository was organized into separate directories for the assignments.
 
 The assignments are designed to compile and run on a Linux environement, e.g. the empress.csusm.edu server. You may set up your own Linux system for the assignments as well. Contact the instructor if you need help on using Linux.
 
+## Code Comments
+You must provide sufficient comments in your code so that others can understand what you have done. 
+- Each function should have a brief comment explaining the purpose of the function, input parameters to the function, and output. The comments might also state the limitations of the function using possibly pre-conditions and post-conditions.
+- Most variables should have a brief comment explaining their purpose. Looping control variables such as: “x” or “i” need not be commented.
+- Comment your code to explain tricky and important points (not every line).
+- Comments should be comprehensible and useful. Comments such as: “This adds 1 to Count” are trivial and should be avoided.
+- Comments should be clearly organized and easily distinguishable from the actual code.
+
 ## Submission
 The completed source code should be submitted to Gradescope. See each assignment instruction for more details.
 
