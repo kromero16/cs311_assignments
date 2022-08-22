@@ -8,6 +8,7 @@
 int main() {
     int array[] = {6, 1, 2, 3, 4, 5, 0, -1, -2, -3, -4};
     int size = sizeof(array) / sizeof(array[0]);
+    cout << "Original: " ;
     printArray(array, 0, size-1);
     cout << "Insertion sort an array:" << endl;
     insertionSort(array, 0, size-1, false);

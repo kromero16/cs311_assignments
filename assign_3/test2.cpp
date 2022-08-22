@@ -18,6 +18,7 @@ int main() {
     list.addRear(-2);
     list.addRear(-3);
     list.addRear(-4);
+    cout << "Original: " << endl;
     list.displayAll();
     cout << "Insertion sort linked list: " << endl;
     LinkedList sortedList1 = insertionSortLL(list);
