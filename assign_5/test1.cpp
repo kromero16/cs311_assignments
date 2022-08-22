@@ -1,6 +1,6 @@
 /**
  * This file tests the implementation of BST data structure
- * Don't modify it.
+ * 
  */
 #include <iostream>
 #include <stdlib.h>
@@ -10,19 +10,12 @@
 using namespace std;
 
 /**
- * Define messages for use in the tester
- */
-#define MESSAGE_SUCCESS "Success"
-#define MESSAGE_WRONG_SIZE "Incorrect size"
-#define MESSAGE_FALSE_NEGATIVE "BST find returned false when element actually existed"
-#define MESSAGE_FALSE_POSITIVE "BST find returned true when element didn't actually exist"
-
-/**
  * Test BST class using numbers from standard input
  */
 int main() {
     // randomly sample a bunch of integers
-    srand(time(NULL));
+    //srand(time(NULL));
+    srand(1);
     unordered_set<int> nums;
     while(nums.size() < 100) {
         nums.insert((rand() % 10000) - 5000);
@@ -33,8 +26,10 @@ int main() {
     unsigned int count = 0;
     for(int num : nums) {
         bst.insert(num);
+        //bst.printInorder(bst.getRoot());
+        //cout << bst.size() << endl;
         if(bst.size() != ++count) {
-            cout << MESSAGE_WRONG_SIZE << endl;
+            cout << "Incorrect tree size" << endl;
             return 1;
         }
     }
@@ -45,15 +40,17 @@ int main() {
     for(int num : nums) {
         bst.insert(num);
         if(bst.size() != ++count) {
-            cout << MESSAGE_WRONG_SIZE << endl;
+            cout << "Incorrect tree size" << endl;
             return 1;
         }
     }
+    cout << "BST size = " << bst.size() << endl;
 
     // check if numbers exist
     for(int num : nums) {
+        cout << "Checking if " << num << " exists" << endl;
         if(!bst.find(num)) {
-            cout << MESSAGE_FALSE_NEGATIVE << endl;
+            cout << "BST find returned false when element actually existed" << endl;
             return 1;
         }
     }
@@ -65,15 +62,16 @@ int main() {
             num = (rand() % 10000) - 5000;
         }
         if(bst.find(num)) {
-            cout << MESSAGE_FALSE_POSITIVE << endl;
+            cout << "BST find returned true when element didn't actually exist" << endl;
             return 1;
         }
     }
 
+    cout << "Leftmost value = " << bst.getLeftMostNode()->data << endl;
     bst.printInorder(bst.getRoot());
-    bst.printPreorder(bst.getRoot());
-    bst.printPostorder(bst.getRoot());
+    //bst.printPreorder(bst.getRoot());
+    //bst.printPostorder(bst.getRoot());
     // if it didn't fail yet, success!
-    cout << MESSAGE_SUCCESS << endl;
+    cout << endl << "Success" << endl;
     return 0;
 }
