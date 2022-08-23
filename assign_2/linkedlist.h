@@ -3,6 +3,10 @@
 //Linkedlist class - header file template 
 //You must complete the TODO parts and then complete LinkedList.cpp. Delete "TODO" after you are done.
 //You should always comments to each function to describe its PURPOSE and PARAMETERS 
+#pragma once
+
+#include <string>
+using namespace std;
 
 // =======================================================
 // Your name: ??? (TODO: Add your name)
@@ -27,15 +31,18 @@ struct Node {
 //---------------------------------------------------------
 
 class LinkedList {
-
 private:
     Node *front;       // pointer to the front node
     Node *rear;        // pointer to the rear node
     int count;        // the number of nodes in the list
 
 public:
-
-    LinkedList();     // constructor to create an empty list
+    LinkedList() {     // constructor to create an empty list
+        front = nullptr;
+        rear = nullptr;
+        count = 0;
+    }
+    
     ~LinkedList();     // destructor to destroy all nodes and release memory
 
     /**
@@ -56,13 +63,18 @@ public:
      * @brief Purpose: Checks if the list is empty
      * @return true if the list is empty, false otherwise
      */
-    bool isEmpty();
+    bool isEmpty() const;
 
     /**
      * @brief  Get the number of nodes in the list
      * @return int The number of nodes in the list
      */
-    int length();
+    int length() const;
+    
+    /**
+     * @brief Convert the contents of the list to a string
+     */
+    string toString();
 
     /**
      * @brief  Displays the contents of the list
@@ -85,7 +97,7 @@ public:
     /**
      * @brief Delete a node at a given position from the list. The
      * node at position pos is deleted and the value of the deleted node is returned in val.
-     * The valid range of pos is 1 to count. pos = 1 is the first node, and pos = count is the last node.
+     * The valid range of pos is 0 to count-1. pos = 0 is the first node, and pos = count-1 is the last node.
      * @param pos: position of the node to be deleted
      * @param val: it is set to the value of the node to be deleted
      * @return true: if the node was deleted successfully
@@ -94,15 +106,22 @@ public:
     bool deleteAt(int pos, T &val);
 
     /**
-     * @brief Insert a value at a specified position in the list. The valid pos is in the range of 1 to count+1.
-     * The value will be inserted before the node at the specified position. if pos = 1, the value will be inserted
-     * at the front of the list. if pos = count+1, the value will be inserted at the rear of the list.
+     * @brief Insert a value at a specified position in the list. The valid pos is in the range of 0 to count.
+     * The value will be inserted before the node at the specified position. if pos = 0, the value will be inserted
+     * at the front of the list. if pos = count, the value will be inserted at the rear of the list.
      * @param pos: position to insert the value at.
      * @param val: value to insert.
      * @return true: if the value was inserted.
      * @return false: if the value was not inserted because pos is out of the range.
      */
     bool insertAt(int pos, T val);
+
+    /**
+     * @brief check whether a value is in the list or not
+     * @param val
+     * @return true if the val is found in the list, false otherwise
+     */
+    bool search(T val) const;
     
     /**
      * @brief Assume two linked lists that represent Set A and Set B respectively. 
@@ -110,7 +129,7 @@ public:
      * 
      * @param LA Input linkedlist A as a set (no duplicated element)
      * @param LB Input linkedlist B as a set (no duplicated element)
-     * @return LinkedList return the unioned linkedlist 
+     * @return LinkedList* return the linkedlist of the union
      */
     friend LinkedList unionLinkedList(const LinkedList& LA, const LinkedList& LB);
 

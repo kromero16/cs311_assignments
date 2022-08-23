@@ -1,14 +1,14 @@
-//CS311 Yoshii S22 Linked List class
+/**
+ * @brief The implementation of the Linked List data structure
+ */
 
-//INSTRUCTION:
-//It helps to first create if-then-else structure to fill in later.
-//- Make sure PURPOSE and PARAMETER comments are given in detail
+//You must complete the TODO parts and then complete LinkedList.cpp. Delete "TODO" after you are done.
+
+//- Make sure description and PARAMETER comments are given in detail
 //  Highly recommended to copy HW3P1-help as PURPOSE of each function.
 //  Add sufficient comments to your code body to describe what it does.
 //      - Make sure all if-then-else are commented describing which case it is
 //      - Make sure all local variables are described fully with their purposes
-
-//You must complete the TODO parts and then complete LinkedList.cpp. Delete "TODO" after you are done.
 
 // ====================================================
 //Your name: ??? (TODO: Add your name)
@@ -20,13 +20,6 @@
 #include"linkedlist.h"
 
 using namespace std;
-
-/**
- * @brief Construct an empty list
- */
-LinkedList::LinkedList() {
-    //TODO: Add code here
-}
 
 /**
  * @brief Destructor to destroy all nodes and release memory
@@ -47,21 +40,35 @@ bool LinkedList::isEmpty() const {
  * @brief  Get the number of nodes in the list
  * @return int The number of nodes in the list
  */
-int LinkedList::length() const {
+int LinkedList::length() const{
     //TODO: Add code here
+}
+
+/**
+ * @brief Convert the list to a string
+ *
+ */
+string LinkedList::toString() {
+    string str = "[";
+    Node *ptr = front;
+    if (ptr != nullptr) {
+        // Head node is not preceded by separator
+        str += to_string(ptr->val);
+        ptr = ptr->next;
+    }
+    while (ptr != nullptr) {
+        str += ", " + to_string(ptr->val);
+        ptr = ptr->next;
+    }
+    str  += "]";
+    return str;
 }
 
 /**
  * @brief Displays the contents of the list
  */
 void LinkedList::displayAll() {
-    Node *ptr = front;
-    cout << "[";
-    while(ptr != nullptr) {
-        cout << " " << ptr->val;
-        ptr = ptr->next;
-    }
-    cout << "]";
+    cout << toString() << endl;
 }
 
 //TODO: Add comments
@@ -92,14 +99,8 @@ bool LinkedList::deleteRear(T &OldNum) {
 
 /* --- harder ones for test 2 and 3 -- */
 
-/**
-     * @brief Delete a node at a given position from the list. The
-     * node at position pos is deleted and the value of the deleted node is returned in val.
-     * The valid range of pos is 1 to count. pos = 1 is the first node, and pos = count is the last node.
-     * @param pos: position of the node to be deleted
-     * @param val: it is set to the value of the node to be deleted
-     * @return true: if the node was deleted successfully
-     * @return false: if the node was not deleted successfully because the position was out of range
+    /**
+    * Implement the deleteAt function to delete a node at a given position.
     */
 bool LinkedList::deleteAt(int pos, T &val) {
     //TODO: Add code here
@@ -108,14 +109,8 @@ bool LinkedList::deleteAt(int pos, T &val) {
     // Do not forget to set value.
 }
 
-/**
-     * @brief Insert a value at a specified position in the list. The valid pos is in the range of 1 to count+1.
-     * The value will be inserted before the node at the specified position. if pos = 1, the value will be inserted
-     * at the front of the list. if pos = count+1, the value will be inserted at the rear of the list.
-     * @param pos: position to insert the value at.
-     * @param val: value to insert.
-     * @return true: if the value was inserted.
-     * @return false: if the value was not inserted because pos is out of the range.
+    /**
+     * Implement the insertAt function here.
      */
 bool LinkedList::insertAt(int pos, T val) {
     //TODO: Add code here
@@ -152,5 +147,14 @@ LinkedList &LinkedList::operator=(const LinkedList &other) {
         // TODO: Add code here
     }
     return *this;
+}
+
+/**
+ * Implement the search function.
+ * 
+ * @return true if the val is found in the list, false otherwise
+ */
+bool LinkedList::search(T val) const {
+    // TODO: Add code here
 }
 
