@@ -37,6 +37,12 @@ public:
 
     // Destructor
     ~Stack();
+    
+    // Copy constructor
+    Stack(const Stack<T>& stk);
+
+    // Assignment operator
+    Stack<T>& operator = (const Stack<T>& stk);
 
     /**
      * @brief Push a value to the stack.
@@ -82,6 +88,17 @@ Stack<T>::Stack(int capacity) {
 template <typename T>
 Stack<T>::~Stack() {
     // TODO: Add your code here
+}
+
+template <typename T>
+Stack<T>::Stack(const Stack<T>& stk) {
+   // TODO: Add you code here
+}
+
+template <typename T>
+Stack<T>& Stack<T>::operator = (const Stack<T>& stk) {
+  // TODO: Add you code here
+   return *this;
 }
 
 // TODO: Add implementation of remaining Stack functions.

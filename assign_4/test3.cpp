@@ -20,13 +20,19 @@ void testInfixExpression(string expr) {
 int main(int argc, char *argv[])
 {
     cout << "Test evaluation of infix expressions " << endl;
-    cout << "Enter an infix expression: ";
-    testInfixExpression("3+4*5");
+    string infix_exprs[] = {"3+4*5", "(3+4)*5", "(3+4)*5+6", "(3+4)*5+6/7", "(3+4)*5+6/(7+8)", "(3+4)*5+6/(7+8)-9", "(3+4)*5+6/(7+8)&9"};
+    for (string expr : infix_exprs) {
+        cout << "------------------------------------------------------" << endl;
+        cout << "Infix expr: " << expr << endl;
+        cout << "Converted postfix expr: " << convertInfixToPostfix(expr) << endl;
+        testInfixExpression(expr);
+    }
+    /*testInfixExpression("3+4*5");
     testInfixExpression("(3+4)*5");
     testInfixExpression("(3+4)*5+6");
     testInfixExpression("(3+4)*5+6/7");
     testInfixExpression("(3+4)*5+6/(7+8)");
-    testInfixExpression("(3+4)*5+6/(7+8)^9");
-    testInfixExpression("(3+4)*5+6/(7+8)9");
+    testInfixExpression("(3+4)*5+6/(7+8)-9");
+    testInfixExpression("(3+4)*5+6/(7+8)9");*/
     return 0;
 }

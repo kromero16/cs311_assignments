@@ -7,17 +7,17 @@
 #include <time.h>
 #include <unordered_set>
 #include "BST.h"
+#include "assert.h"
+
 using namespace std;
 
 /**
  * Test BST class using numbers from standard input
  */
 int main() {
-    srand(1);
-    unordered_set<int> nums;
-    while(nums.size() < 10) {
-        nums.insert((rand() % 100) - 50);
-    }
+    int nums[] = {12, -29, -1, 42, 43, -15, 27, 36, -35, 33};
+    unsigned int size = sizeof(nums) / sizeof(nums[0]);
+
     BST bst;
     
     for(int num : nums) {
@@ -25,8 +25,17 @@ int main() {
         bst.insert(num);
         cout << "Height of BST: " << bst.height() << endl;
     }
+
+    cout << "Leftmost value = " << bst.getLeftMostNode()->data << endl;
+
+    // Inorder traversal of the BST
+    cout << "Inorder traversal: ";
     bst.printInorder(bst.getRoot());
-    cout << bst.size() << endl;
+    cout << endl;
+    cout << "BST tree size = " << bst.size() << endl;
+    assert(bst.size() == size);
+    // Preorder traversal of the BST
+    cout << "Preorder traversal: ";
     bst.printPreorder(bst.getRoot());
     cout << endl;
     // check the height of the tree

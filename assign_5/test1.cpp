@@ -67,10 +67,6 @@ int main() {
         }
     }
 
-    cout << "Leftmost value = " << bst.getLeftMostNode()->data << endl;
-    bst.printInorder(bst.getRoot());
-    //bst.printPreorder(bst.getRoot());
-    //bst.printPostorder(bst.getRoot());
     // if it didn't fail yet, success!
     cout << endl << "Success" << endl;
     return 0;
