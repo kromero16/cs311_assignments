@@ -23,7 +23,8 @@ You must provide sufficient comments in your code so that others can understand 
 ## Submission
 The completed source code should be submitted to Gradescope. See each assignment instruction for more details.
 
-## Guidelines for what is allowed and what is not!
+## Guidelines for Academic Integrity
+Students must follow the Campus Academic Integrity and Student Conduct Policies. The following are what is allowed and not allowed for completing the assignments. 
 ### Allowed:
 - Talking about general strategy including general class design and general algorithms. Though it's definitely better if you try to come up with these on  - your own first.
 - Using general C++ code you find online for common operations like:
