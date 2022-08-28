@@ -15,7 +15,7 @@ The Heap data structure should implement the following member functions:
 - `heapify`: Organizes the values in a heap class.
 - `percolateDown`: Percolates down the Heap to move nodes down one level.
 - `percolateUp`: Percolates up the Heap to move nodes up one level.
-- `inert`: Inerts a value into the Heap.
+- `insert`: Inserts a value into the Heap.
 - `removeMax`: Removes the max values from the Heap.
 - `swap`: Swaps two stored values in the Heap.
 - `heapSort`: Sorts values in an int array by putting them onto a heap and then removing them from the heap in order.
