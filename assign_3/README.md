@@ -48,7 +48,8 @@ The definition of the hybrid quicksort function is as the following:
  */
 void hybridQuickSort(int array[], int lowindex, int highindex, bool reversed = false);
 ```
-The implementation of the function should be included in the "sorting_hybrid.cpp" file and the array is sorted in place.
+The implementation of the function should be included in the "sorting_hybrid.cpp" file and the array is sorted in place. The program `test3` tests the performance
+of insert sort, quicksort, and hybrid quicksort for an array with 100,000 numbers. Try to test and adjust your hybrid quicksort implementation to beat the performance of regular quicksort.
 
 ## Sorting a linked list
 Implement the insertion sort and merge sort for a linked list of integer values. The LinkedList data structure is the same as what is defined in the previous assignment. You should copy the "linkedlist.cpp" file from your previous assignment. The definitions of the functions are as the following. 
