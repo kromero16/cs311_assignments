@@ -26,3 +26,11 @@ LA = (3, 5, 8, 11)
 LB = (2, 6, 8, 9, 22, 24)
 ```
 Then `mergeLinkedList (LA, LB) = (2, 3, 5, 6, 8, 8, 9, 11, 22, 24)`. Note same values may repeat
+
+## Testing
+To build the test executable `test`, type make at the command line. Then run the test and confirm the outputs match what are in the "test_out.txt" file.
+```
+$ make
+$ ./test
+```
+Your code should work correctly for all tests and be robust for potential error conditions, and free of dangerous code constructs and memory leaks. We will use tools like cppcheck and valgrind to to grade your code and catch memory leaks.
