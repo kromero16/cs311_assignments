@@ -9,13 +9,13 @@
 /**
  * Implement the insertion sort algorithm for Linkedlist correctly
  */
-LinkedList insertionSortLL(LinkedList& list, bool reversed) {
+LinkedList insertionSortLL(const LinkedList& list, bool reversed) {
     // TODO: Add your code here
 }
 
 /**
  * Implement the merge sort algorithm for LinkedList correctly
  */
-LinkedList mergeSortLL(LinkedList& list, bool reversed) {
+LinkedList mergeSortLL(const LinkedList& list, bool reversed) {
     // TODO: Add your code here
 }

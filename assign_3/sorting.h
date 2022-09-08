@@ -44,7 +44,7 @@ void quickSort(int array[], int lowindex, int highindex, bool reversed = false);
  * @param reversed if reversed = true, the list should be sorted in descending order, otherwise in ascending order
  * @return LinkedList Sorted linked list
  */
-LinkedList insertionSortLL(LinkedList& list, bool reversed = false);
+LinkedList insertionSortLL(const LinkedList& list, bool reversed = false);
 
 /**
  * @brief Merge sort algorithm for linked lists
@@ -53,7 +53,7 @@ LinkedList insertionSortLL(LinkedList& list, bool reversed = false);
  * @param reversed if reversed = true, the list should be sorted in descending order, otherwise in ascending order
  * @return LinkedList Sorted linked list
  */
-LinkedList mergeSortLL(LinkedList& list, bool reversed = false);
+LinkedList mergeSortLL(const LinkedList& list, bool reversed = false);
 
 /**
  * @brief A hybrid of insertion sort and quick sort algorithm. The algorithm is based on the idea that if the array is short, it is better to use insertion sort.
