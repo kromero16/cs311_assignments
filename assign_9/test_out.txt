@@ -1,0 +1,32 @@
+Testing results:
+Displaying the directed graph:
+0: 2->1
+1: 4
+2: 1->3
+3: 4
+4:
+Searching for a path from 0 to 4
+Found a path to 4, the path:
+0->2->1->4
+
+Searching for a path from 2 to 0
+Could not find a path to 0
+
+
+Checking the shortest path with Dijkstras from vertex 0:
+Vertex| Distance[v]|    Previous vertex|        Visited
+--------------------------------------------------------------------
+0       0               None                    True
+2       1               0                       True
+1       3               2                       True
+3       5               1                       True
+4       7               3                       True
+
+Checking the shortest path with Dijkstras from vertex 2:
+Vertex| Distance[v]|    Previous vertex|        Visited
+--------------------------------------------------------------------
+2       0               None                    True
+1       2               2                       True
+3       4               1                       True
+4       6               3                       True
+0       -               -                       False
