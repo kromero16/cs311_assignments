@@ -48,10 +48,11 @@ The definition of the hybrid quicksort function is as the following:
  */
 void hybridQuickSort(int array[], int lowindex, int highindex, bool reversed = false);
 ```
-The implementation of the function should be included in the "sorting_hybrid.cpp" file and the array is sorted in place.
+The implementation of the function should be included in the "sorting_hybrid.cpp" file and the array is sorted in place. The program `test3` tests the performance
+of insert sort, quicksort, and hybrid quicksort for an array with 100,000 numbers. Try to test and adjust your hybrid quicksort implementation to beat the performance of regular quicksort.
 
 ## Sorting a linked list
-Implemenmt the insertion sort and merge sort for a linked list of integer values. The LinkedList data structure is the same as what is defined in the previous assignment. You should copy the "linkedlist.cpp" file from your previous assignment. The definitions of the functions are as the following. 
+Implement the insertion sort and merge sort for a linked list of integer values. The LinkedList data structure is the same as what is defined in the previous assignment. You should copy the "linkedlist.cpp" file from your previous assignment. The definitions of the functions are as the following. 
 
 ```
 /**
@@ -61,7 +62,7 @@ Implemenmt the insertion sort and merge sort for a linked list of integer values
  * @param reversed if reversed = true, the list should be sorted in descending order, otherwise in ascending order
  * @return LinkedList Sorted linked list
  */
-LinkedList insertionSortLL(LinkedList& list, bool reversed = false);
+LinkedList insertionSortLL(const LinkedList& list, bool reversed = false);
 
 ```
 and
@@ -73,9 +74,9 @@ and
  * @param reversed if reversed = true, the list should be sorted in descending order, otherwise in ascending order
  * @return LinkedList Sorted linked list
  */
-LinkedList mergeSortLL(LinkedList& list, bool reversed = false);
+LinkedList mergeSortLL(const LinkedList& list, bool reversed = false);
 ```
-You should complete the implementations of those two functions in the "sorting_ll.cpp" file. The input linked list isn't modified in place. Instead, another linked list with numbers in sorted order is returned. 
+You should complete the implementations of those two functions in the "sorting_ll.cpp" file. The input linked list isn't modified. Instead, a new linked list with numbers in sorted order should be returned. This part of assignment uses the `LinkedList` data structure from assignment 1 and 2. You should copy your previous code of the `LinkedList` class. The `insertionSortLL` and `mergeSortLL` are declared as friend functions of the LinkedList class. 
 
 ## Testing
 
